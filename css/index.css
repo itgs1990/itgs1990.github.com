@@ -41,11 +41,13 @@
 .case a{ color:#000; }
 .case{ position:absolute; left:800px; top:600px; width:100px; height:100px; }
 .case .case_on{ width:100px; height:100px; background:#92C469; border-radius:6px; position:absolute; z-index:3; left:0px; top:0px; cursor:pointer; }
+.case .case_on2{ background:#CF0;}
 .case .case_on h3{ width:60px; height:60px; text-align:center; line-height:60px; font-size:50px; font-weight:normal; }
 .case .case_on b{ width:14px; height:14px; background:url(../images/ico.png) 0 -650px no-repeat; position:absolute; right:10px; top:10px; }
 .case .case_on div.case-title{ padding-left:10px; height:40px; line-height:40px; font-size:16px; color:#fff; position:absolute; left:0; top:60px; }
 .case .case_on .case-bg{ width:100px; height:100px; background:url(../images/close.png) center no-repeat #D77075; position:absolute; left:0; top:0; border-radius:6px; display:none; }
 .case .case-show{ cursor:pointer; display:none; }
+
 
 
 

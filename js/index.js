@@ -6,6 +6,8 @@ addReady(function(){
 	var oCard = document.getElementById('card');
 	var oSkill = document.getElementById('skill');
 	var oCase = document.getElementById('case');
+	var oEff=document.getElementById('effect');
+	var oEff2=document.getElementById('effect1');
 	var oH3 = oAll.getElementsByTagName('h3');
 	var oCardShow = document.getElementById('card-show');
 	window.onload=window.onresize=function(){	
@@ -23,7 +25,7 @@ addReady(function(){
 			});
 			//alert(arr);
 			function setPostion(obj,n){	
-				obj.style.left = (n*100) + 'px';
+				obj.style.left = (n*90) + 'px';
 				obj.style.top = rnd(1,parseInt(document.documentElement.clientHeight/100-1))*100 +'px';
 			}
 			for(var i=0;i<arr.length;i++){
@@ -97,74 +99,3 @@ $(function(){
 		$('.skill-show').css({'WebkitTransition':'.5s all ease','opacity':0});	
 	});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

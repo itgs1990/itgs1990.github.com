@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project</title>
+<style>
+	body{ background:url(images/22222.png) no-repeat; }
+	.return{ width:40px; height:32px; display:block; position:absolute; left:20px; top:20px;}
+	#div1{width:260px;height:360px; border-radius:20px;position:absolute;left:235px; top:95px; overflow:hidden; }
+	_#div1 img{width:260px;height:360px;}
+	#div1 #mask{width:40px;height:40px; border-radius:5px; background:#666; opacity:.5; position:absolute;left:0; top:0;display:none;}
+	#div2{ width:260px;height:360px; overflow:hidden; display:none; position:absolute;left:600px; top:95px;border-radius:10px;}
+	#div2 img{ position:absolute; left:0; top:0;}
+</style>
+<script>
+	window.onload = function(){
+		var oDiv1 = document.getElementById('div1');	
+		var oDiv2 = document.getElementById('div2');	
+		var oMask = document.getElementById('mask');	
+		var oImg = oDiv2.children[0];
+		oDiv1.onmouseenter = function(){
+			oDiv2.style.display = 'block';	
+			oMask.style.display = 'block';	
+		};	
+		oDiv1.onmouseleave = function(){
+			oDiv2.style.display = 'none';	
+			oMask.style.display = 'none';	
+		};	
+		oDiv1.onmousemove = function(ev){
+			var oEvent = ev||event;
+			var l = oEvent.clientX - oDiv1.offsetLeft -oMask.offsetWidth/2;
+			var t = oEvent.clientY - oDiv1.offsetTop -oMask.offsetWidth/2;
+			if(l<0){
+				l = 0;
+			}else if(l>oDiv1.offsetWidth - oMask.offsetWidth){
+				l=oDiv1.offsetWidth - oMask.offsetWidth;
+			}
+			if(t<0){
+				t = 0;
+			}else if(t>oDiv1.offsetHeight - oMask.offsetHeight){
+				t=oDiv1.offsetHeight - oMask.offsetHeight;
+			}
+			oMask.style.left = l +'px';
+			oMask.style.top = t +'px';
+			oImg.style.left = -l*(oImg.offsetWidth - oDiv2.offsetWidth)/(oDiv1.offsetWidth - oMask.offsetWidth ) +'px';
+			oImg.style.top = -t*(oImg.offsetHeight - oDiv2.offsetHeight)/(oDiv1.offsetHeight - oMask.offsetHeight ) +'px';
+		};
+	};
+</script>
+</head>
+<body>
+    <a href="through.html" class="return"><img src="images/page-one.png"></a>
+	<div id="div1">
+    	<img src="images/butterfly2.jpg"/>
+        <span id="mask"></span>
+    </div>
+    <div id="div2">
+    	<img src="images/butterfly-2.png"/>
+    </div>
+</body>
+</html>
